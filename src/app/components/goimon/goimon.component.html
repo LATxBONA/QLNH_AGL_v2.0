@@ -1,0 +1,7 @@
+<h1>GỌI MÓN</h1>
+<div id="container">
+    <a class="item-table" *ngFor="let table of tables" (click)="datmon(table)">
+        <p>{{ table.TableName }}</p>
+        <p>Trạng thái: {{table.Status}}</p>
+    </a>
+</div>

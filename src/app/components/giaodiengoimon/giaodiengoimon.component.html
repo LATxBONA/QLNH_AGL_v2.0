@@ -1,0 +1,58 @@
+<div id="container">
+    <div class="context-food-category">
+        <div class="context-category">
+            <a tabindex="0" class="category" *ngFor="let item of listDmFood" [ngClass]="{'selected': item.isSelected}"
+                (click)="getFood(item)">
+                {{ item.CategoryName }}
+            </a>
+        </div>
+        <div class="context-food">
+            <div>
+                <a tabindex="0" *ngFor="let item of listFood" (click)="addBill(item)">
+                    <span>{{item.FoodName}}</span>
+                    <span>{{item.Price}}đ</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="context-tablename-listitem">
+        <div class="context-tablename">
+            <p>Bàn {{TableName}}</p>
+            <div style="color: red; font-family: arial;">{{thongbao}}</div>
+            <p>Tên khách hàng</p><input type="text" name="CustomerName" #CustomerName="ngModel"
+                [(ngModel)]="bill.CustomerName" placeholder="Tên khách hàng...">
+            <p>Số điện thoại</p><input type="text" name="SDT" #SDT="ngModel" [(ngModel)]="bill.SDT"
+                placeholder="Số điện thoại...">
+        </div>
+        <div class="context-listitem">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Món ăn</th>
+                        <th>Giá tiền</th>
+                        <th>Số lượng</th>
+                        <th>Tổng tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listItemBill">
+                        <td style="text-align: left; width: 35%; padding-left: 1.5%;">{{item.FoodName}}</td>
+                        <td style="text-align: center; width: 20%;">{{item.Price | number:'1.0-2' }}đ</td>
+                        <td style="text-align: center; width: 20%;" class="td-quantity">
+                            <div class="quantity-controls">
+                                <button>-</button>
+                                {{item.Quantity}}
+                                <button (click)="plushItem(item)">+</button>
+                            </div>
+                        </td>
+                        <td style="text-align: center;width: 25%;">{{item.Quantity * item.Price | number:'1.0-2'}}đ
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="display: flex; width: 95%; justify-content: end; padding-top: 2%;">
+            <button>Thanh toán</button>
+        </div>
+    </div>
+</div>

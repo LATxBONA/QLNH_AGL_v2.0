@@ -1,0 +1,26 @@
+{
+    "BillCurrentOfTable": [
+        {
+            "BillID": "5",
+            "FoodName": "Cocacola",
+            "Quantity": "9",
+            "Price": "18000",
+            "TableName": "7",
+            "BillDate": "2024-06-25",
+            "TotalAmount": "162000",
+            "CustomerName": "abc",
+            "SDT": "123"
+        },
+        {
+            "BillID": "6",
+            "FoodName": "N\u01b0\u1edbc l\u1ecdc",
+            "Quantity": "8",
+            "Price": "6000",
+            "TableName": "7",
+            "BillDate": "2024-06-25",
+            "TotalAmount": "48000",
+            "CustomerName": "abc",
+            "SDT": "123"
+        }
+    ]
+}
